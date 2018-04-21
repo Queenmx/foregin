@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <title>签名板</title>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="keywords" content="星融h5" />
+    <meta name="mobiletitle" content="签名板" />
+    <!-- <script src="js/jquery-1.11.1.min.js"></script> -->
+    <script src="js/libs/jquery.js"></script>
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/m-base.css" />
+    <link rel="stylesheet" href="css/pensigner.css" />
+    <!--[if lt IE 9]>
+			<script type="text/javascript" src="js/libs/flashcanvas.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+    <div class="warpper">
+        <div class="container">
+            <div class="page-header clearfix">
+                <a href="javascript:history.go(-1);" class="page-back"></a>
+                <p class="page-title">签名确认</p>
+                <p class="page-submit" id="reset">重写</p>
+            </div>
+            <div class="page-main">
+                <div class="page-banner">
+                    <p>请在手绘板上使用正楷签名</p>
+                </div>
+                <div class="page-board">
+                    <div id="content">
+                        <div id="signatureparent">
+                            <div id="signature"></div>
+                        </div>
+                        <div id="tools"></div>
+                    </div>
+                </div>
+
+                <button class="page-button" id="jSignatureSubmit">确认</button>
+                <div class="page-agree">
+                    <input type="checkbox" id="checked" checked="chekcked" />
+                    <label for="checked">我已详细阅读并同意以下合同条款</label>
+                    <a id="ct0" data-href="0" href="javascript:void(0)">《电子签名授权书》</a>
+                    <a id="ct1" data-href="1" href="javascript:void(0)">《小额贷款合同》</a>
+                    <!-- <a id="ct2" data-href="2" href="javascript:void(0);">《咨询服务协议》</a> -->
+                    <a id="ct3" data-href="3" href="javascript:void(0);">《委托划款协议》</a>
+                    <a id="ct4" data-href="4" href="javascript:void(0);">《信用信息查询和报送授权书》</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/libs/modernizr.js"></script>
+    <script src="js/libs/jSignature.min.noconflict.js"></script>
+    <script src="js/pensigner.js"></script>
+</body>
+
+</html>

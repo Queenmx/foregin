@@ -1,0 +1,137 @@
+/**
+ * 签名版css样式
+ */
+.warpper {
+  background: #fff;
+}
+.page-header {
+  width: 100%;
+  height: 0.9rem;
+  background: #fff;
+  border-bottom: 2px solid #ededed;
+}
+.page-header .page-back {
+  width: 0.9rem;
+  height: 0.9rem;
+  display: block;
+  background: url(../img/back_icon.png) no-repeat;
+  background-size: 100%;
+  float: left;
+}
+.page-header .page-title {
+  font-size: 0.29rem;
+  color: #656566;
+  line-height: 0.94rem;
+  float: left;
+}
+.page-header .page-submit {
+  width: 1.24rem;
+  height: 0.54rem;
+  line-height: 0.54rem;
+  text-align: center;
+  font-size: 0.28rem;
+  float: right;
+  color: #656566;
+  margin: 0.18rem 0.54rem 0.18rem 0;
+  border-radius: 0.05rem;
+  cursor: pointer;
+}
+.page-main {
+  width: 100%;
+}
+.page-main .page-banner {
+  width: 100%;
+  background: #568ff6;
+  height: 2.54rem;
+}
+.page-main .page-banner p {
+  padding-top: 0.5rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.36rem;
+}
+.page-main .page-board {
+  width: 6.44rem;
+  height: 6.44rem;
+  margin: -1.5rem auto;
+  background: url(../img/board.png) no-repeat center;
+  z-index: 99;
+  top: 2.3rem;
+  background-size: 100%;
+}
+.page-main .page-agree{
+  width: 79%;
+  margin: 0 auto;
+  text-align: center;
+  color: #656566;
+  font-size: 0.26rem;
+  line-height: .4rem;
+}
+.page-agree a{
+    color: #568ff6;
+}
+#checked{
+  display: none;
+}
+#checked + label:before{
+  content: '';
+  width: 0.31rem;
+  height: 0.31rem;
+  background: url(../img/nochecked.png) no-repeat center;
+  background-size: 100%;
+  border: none;
+  display: inline-block;
+  margin-right: 0.1rem;
+  vertical-align: -0.04rem;
+  margin-left: -0.51rem;
+}
+#checked:checked+label:before{
+  content: '';
+  width: 0.3rem;
+  height: 0.3rem;
+  display: inline-block;
+  background: url(../img/gou.png) no-repeat center;
+  background-size: 100%;
+  vertical-align: -0.04rem;
+  margin-left: -0.51rem;
+}
+.page-main .page-button {
+  width: 6.44rem;
+  height: 0.78rem;
+  line-height: 0.78rem;
+  background: #568ff6;
+  text-align: center;
+  color: #fff;
+  border-radius: 0.1rem;
+  font-size: 0.3rem;
+  display: block;
+  margin: 2.8rem auto 1rem;
+  cursor: pointer;
+  border: none;
+}
+
+
+	#signatureparent {
+		color:#000;
+		/*max-width:600px;*/
+	}
+	
+	/*This is the div within which the signature canvas is fitted*/
+
+	/* Drawing the 'gripper' for touch-enabled devices */ 
+	html.touch #content {
+		float:left;
+		width:100%;
+	}
+	html.touch #scrollgrabber {
+		float:right;
+		width:4%;
+		margin-right:2%;
+	}
+	html.borderradius #scrollgrabber {
+		border-radius: 1em;
+  }
+
+
+	 
+

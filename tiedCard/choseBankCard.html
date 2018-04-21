@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>星融-支付</title>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="keywords" content="星融h5" />
+    <meta name="mobiletitle" content="支付" />
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/m-base.css" />
+    <link rel="stylesheet" type="text/css" href="css/pay.css" />
+</head>
+
+<body>
+
+    <div class="warpper">
+        <!-- Header -->
+        <header>
+            <ul class="page-header">
+                <li class="page-back"></li>
+                <li class="page-title">title</li>
+                <li class="page-submit">submit</li>
+            </ul>
+        </header>
+        <!-- way -->
+        <div class="payway grid">
+            <div class="col-12 clearfix">请选择已授权银行卡</div>
+            <ul class="payBox clearfix">
+                <li>
+                    <label for="bank0">
+                        <img class="bankIcon" src="img/bankIcon.png" alt="" />
+                        <span class="bankname">中国建设银行</span>（
+                        <span class="cardNum">1234567851151</span>）
+                        <input type="radio" name="pay" id="bank0" value="0" checked />
+                        <span class="checkIcon"></span>
+                    </label>
+                </li>
+                <li>
+                    <label for="bank1">
+                        <img class="bankIcon" src="img/bankIcon.png" alt="" />
+                        <span class="bankname">中国建设银行</span>（
+                        <span class="cardNum">1234567851151</span>）
+                        <input type="radio" name="pay" id="bank1" value="1" />
+                        <span class="checkIcon"></span>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <!-- addbankBtn -->
+        <a href="addbank.html" class="bankadd">
+            <div class="addBank">
+                <img src="img/add.png" class="addIcon" />
+                <p class="addMsg">添加银行卡</p>
+            </div>
+        </a>
+        <!-- button -->
+        <button class="submit btn btn-primary">确认</button>
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/pay.js"></script>
+</body>
+
+</html>
