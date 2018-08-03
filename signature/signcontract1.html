@@ -15,6 +15,8 @@
     <meta name="mobiletitle" content="签订合同" />
     <script src="http://h5.istarcredit.com/js/lib/jquery-1.11.1.min.js"></script>
     <script src="http://h5.istarcredit.com/js/lib/rem.js"></script>
+    <script src="js/LogRocket.min.js"></script>
+    <script>window.LogRocket && window.LogRocket.init('jhycxq/istarfinancialpay');</script>
     <link rel="stylesheet" href="http://h5.istarcredit.com/css/m-base.css" />
     <link rel="stylesheet" href="http://h5.istarcredit.com/css/signcontract.css" />
 </head>
@@ -22,12 +24,12 @@
 <body>
     <div class="warpper">
         <div class="container">
-            <div class="page-header clearfix">
+            <!-- <div class="page-header clearfix">
                 <a href="javascript:history.go(-1);" class="page-back"></a>
                 <p class="page-title">签订合同</p>
-            </div>
+            </div> -->
             <div class="hetong">
-                <p class="hetong01">小额借款合同</p>
+                <p class="hetong01 contact_name">小额借款合同</p>
                 <div class="hetong02 clearfix mart40">
                     <p class="hetong_p1">合同编号：
                         <span class="contract_number"></span>
@@ -55,7 +57,7 @@
                     <span class="userway">个人消费</span>，未经甲方书面同意，乙方不得改变借款用途，且借款资金不得用于股票、期货、金融衍生产品投资等证券市场投资、房地产投资、股本权益投资及国家及地方性法规、政策明确规定的其他禁止用途。</p>
                 <p class="hetong03">3. 借款期限：从放款之日起（包含放款当天）计算，共计
                     <span class="application_days"></span>天。</p>
-                <p class="hetong03">4. 借款利率：借款利率日利率为0.1%,借款自放款之日起计息，至借款到期还款日至，按本合同约定的借款利率、借款金额和借款期限计算借款利息。</p>
+                <p class="hetong03">4. 借款利率：借款利率为年化36%，日利率=年利率36％÷360，借款自放款之日起计息，至借款到期还款日至，按本合同约定的借款利率、借款金额和借款期限计算借款利息。</p>
                 <p class="hetong04 mat60">第二条 借款发放</p>
                 <p class="hetong03">1. 乙方授权甲方将本合同项下借款划入乙方指定的收款账户：</p>
                 <p class="hetong03">户名：
@@ -120,7 +122,7 @@
                 <p class="hetong04 mat60">第十条 其他约定</p>
                 <b class="hetong03">签约各方对本合同的每一条款均进行了研究分析及充分理解，签约各方对本合同各条款含义及法律后果认识一致。</b>
                 <p class="hetong03 martb30">甲方（盖章）：
-                    <img class="signet" src="http://h5.istarcredit.com/img/zhang.png" />
+                    <!-- <img class="signet" src="http://h5.istarcredit.com/img/zhang.png" /> -->
                 </p>
                 <p class="hetong03 martb30">乙方（签字）：
                     <span class="name"></span>
@@ -134,9 +136,9 @@
             </div>
         </div>
     </div>
-    <script src="js/lib/utils.js"></script>
-    <script src="js/lib/ajax.js"></script>
-    <script src="js/page/signcontact.js"></script>
+    <script src="js/aesmin.js" type="text/javascript" charset=" utf-8 "></script>
+    <script src="js/utils.js"></script>
+    <script src="js/signcontact.js"></script>
 </body>
 
 </html>

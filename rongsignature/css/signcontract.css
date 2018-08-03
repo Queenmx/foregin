@@ -1,0 +1,140 @@
+/**
+ * 签订合同css样式
+ */
+.warpper {
+  background: #fff;
+  height: auto;
+}
+.bormo_banner {
+  width: 100%;
+  height: 3.6rem;
+  background-size: 100%;
+}
+.auth_div04 {
+  width: 6.74rem;
+  height: 1rem;
+  border: 0.02rem solid #bbbbbb;
+  font-size: 0.28rem;
+  line-height: 1rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 0.9rem;
+}
+.bormo_jine {
+  padding-left: 0.38rem;
+  font-size: 0.28rem;
+  line-height: 0.4rem;
+  color: #000000;
+}
+.hetong {
+  margin-left: 0.375rem;
+  margin-right: 0.375rem;
+}
+.hetongimg1 {
+  width: 3.04rem;
+  height: 0.95rem;
+  display: block;
+  margin-left: 0.165rem;
+  margin-top: 0.24rem;
+}
+.hetong01 {
+  color: #000;
+  font-size: 0.3rem;
+  text-align: center;
+  margin-top: 0.45rem;
+}
+.hetong02 {
+  color: #000;
+  font-size: 0.24rem;
+  padding-bottom: 0.15rem;
+}
+.mart40 {
+  margin-top: 0.4rem;
+}
+.hetong_p1 {
+  width: 3.67rem;
+  float: left;
+}
+.hetong_p2 {
+  float: left;
+}
+.hetong03 {
+  line-height: 0.8rem;
+  color: #414141;
+  font-size: 0.24rem;
+  clear: both;
+}
+.hetong04 {
+  line-height: 0.8rem;
+  color: #000;
+  font-size: 0.24rem;
+  clear: both;
+}
+.mat60 {
+  margin-top: 0.6rem;
+}
+.martb30 {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+.hetong_p3 {
+  float: left;
+  width: 3.18rem;
+}
+.hetong_p4 {
+  float: left;
+  /* width: 0.92rem; */
+}
+.marb40 {
+  margin-bottom: 0.4rem;
+}
+.custom{
+    width: 100%;
+    line-height: 0.5rem;
+}
+.table-name{
+    width: 39%;
+    padding: 0 0.2rem;
+}
+.table-value{
+    width: 60%;
+    padding: 0 0.2rem;
+}
+.signet{
+    width: 3rem;
+    height: 3rem;
+}
+.table, .table * {margin: 0 auto; padding: 0;}   
+.table {display: table; width: 80%; border-collapse: collapse;}   
+.table-tr {display: table-row; height: 30px;}   
+.table-th {display: table-cell;font-weight: bold;height: 100%;border: 1px solid gray;text-align: center;vertical-align: middle;}   
+.table-td {display: table-cell;height: 100%;border: 1px solid gray; text-align: center;vertical-align: middle;}  
+
+/* mask */
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.loading {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    margin-left: -1.5rem;
+    margin-top: -.16rem;
+    width: 3rem;
+    height: 1.5rem;
+    text-align: center;
+    font-size: .28rem;
+    color: #fff;
+}
+
+.loadingImg {
+    width: 1rem;
+    height: 1rem;
+    margin: 0 auto 0.1rem;
+}

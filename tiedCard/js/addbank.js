@@ -1,12 +1,41 @@
 var addBank = function () {
-    var userInfo = JSON.parse(localStorage.getItem("userinfo"));
+    this.signinfo = JSON.parse(localStorage.getItem("signinfo"));
+    // console.log(this.signinfo);
+    $("#card").val(this.signinfo.id_card);
+    $("#name").val(this.signinfo.owner);
+    // $("#bankno").val('6214832503050853')
+    $("#phone").val(this.signinfo.phone)
+    // this.identify = localStorage.getItem('identify')
 }
 addBank.prototype = {
+    card_no: '',
+    card_name: '',
+    unique_code: '',
     init: function () {
         var self = this;
+        self.bindEvent();
         self.sendcode();
         self.formVerify();
         // util.toast("失败", false)
+    },
+    bindEvent: function () {
+        var self = this;
+        //银行卡信息select
+        $('.select').on('click', function () {
+            var $this = $(this);
+            var timeSelect = new IosSelect(1, [bankData], {
+                container: '.container',
+                title: '',
+                itemHeight: 50,
+                itemShowCount: 5,
+                oneLevelId: '3',
+                callback: function (data) {
+                    $this.find('.form-show').html(data.value);
+                    self.card_no = data.id;
+                    self.card_name = data.value;
+                }
+            });
+        });
     },
     sendcode: function () {
         var that = this;
@@ -35,6 +64,7 @@ addBank.prototype = {
             }, 1000)
         }
         $('.getcode').on('click', function () {
+            console.log(that.signinfo.identify);
             var self = $(this);
             var cardNo = $("#card").val();
             var phone = $("#phone").val();
@@ -42,29 +72,10 @@ addBank.prototype = {
             var name = $("#name").val();
             var bankno = $("#bankno").val();
             var belongs = $("#belongs").html();
-            var type = util.getQueryString("type");
-            var data = {
-                owner: that.owner,
-                // owner: "韩梅梅",
-                card_no: bankno,
-                id_card: that.idcard,
-                // id_card: "210302196001012114",
-                phone: phone,
-                pay_money: localStorage.getItem("fee"),
-                type: type,
-            }
-            console.log(data);
-            if (type == 2) {
-                var newData = {
-                    identify_pay: that.sign.identify
-                }
-                data = Object.assign(data, newData)
-            }
             if (!flag) {
                 return false;
             } else {
-                // 发送验证码请求发起
-                if (!(/^[\u4e00-\u9fa5]{2,4}$/.test(name))) {
+                if (!(/^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$/.test(name))) {
                     util.toast("请输入正确的开户姓名");
                     return false;
                 } else if (!cardNo) {
@@ -73,58 +84,53 @@ addBank.prototype = {
                 } else if (!util.isCardNo(cardNo)) {
                     util.toast("身份证号非法");
                     return false;
-                }
-                else if (bankno.length < 16) {
+                } else if (bankno.length < 16) {
                     util.toast("请输入正确的银行卡号");
                     return false;
-                } else if (util.luhmCheck(bankno) === false) {
-                    util.toast("请输入正确的银行卡号1");
+                }
+                else if (util.luhmCheck(bankno) === false) {
+                    util.toast("请输入正确的银行卡号");
+                    return false;
+                }
+                else if (!belongs) {
+                    util.toast("请选择所属银行")
                     return false;
                 } else if (!(/^1(3|4|5|7|8)\d{9}$/.test(phone))) {
                     util.toast("请输入正确的手机号码")
                     return false;
                 } else {
+                    var data = {
+                        identify: that.signinfo.identify,
+                        bank_card_no: bankno.trim(),
+                        bank_account_name: name.trim(),
+                        certificate_no: cardNo.trim(),
+                        mobile: phone.trim(),
+                        bank_name: belongs,
+                        bank_code: that.card_no
+                    }
+                    console.log(data)
+                    $('.getcode').off('click')
                     var sendcode = {
-                        url: "/member/loginfee_sign",
+                        url: "h5/preBind",
                         data: data,
                         success: function (res) {
-                            if (res.code == 0) {
-                                util.toast(res.msg);
-                            } else {
-                                that.order_no = res.data.order_no;
-                                $('.getcode').off("click")
+                            $('.getcode').on('click')
+                            console.log(res);
+                            if (res.code == 1) {
+                                that.unique_code = res.unique_code
                                 // 发送验证码
                                 settime(self);
+                            } else {
+                                util.toast(res.msg);
                             }
+                        },
+                        error: function () {
+                            $('.getcode').on('click')
                         }
                     }
-                    uitl.sendRequest('post', sendcode)
+                    util.sendRequest(sendcode)
                 }
 
-            }
-        });
-        $(".form-group").on('click', '.recode', function () {
-            var self = $(this);
-            if (!flag) {
-                return false;
-            } else {
-                // 发送验证码请求发起
-                var sendcode = {
-                    url: "/member/reSendSms",
-                    data: {
-                        order_no: that.order_no
-                    },
-                    success: function (res) {
-                        if (res.code == 0) {
-                            util.toast(res.msg);
-                            return false;
-                        } else {
-                            // 发送验证码
-                            settime(self);
-                        }
-                    }
-                }
-                util.sendRequest('post', sendcode)
             }
         });
     },
@@ -141,7 +147,7 @@ addBank.prototype = {
             var bankno = $("#bankno").val();
             var belongs = $("#belongs").html();
             var address = $("#address").html();
-            if (!(/^[\u4e00-\u9fa5]{2,4}$/.test(name))) {
+            if (!(/^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$/.test(name))) {
                 util.toast("请输入正确的开户姓名");
                 return false;
             } else if (!cardNo) {
@@ -154,26 +160,47 @@ addBank.prototype = {
             else if (($("#bankno").val()).length < 16) {
                 util.toast("请输入正确的银行卡号");
                 return false;
-            } else if (util.luhmCheck(bankno) === false) {
+            }
+            else if (util.luhmCheck(bankno) === false) {
                 util.toast("请输入正确的银行卡号");
                 return false;
-            } else if (!$('#belongs').html()) {
-                util.toast("所属银行没有选择");
+            }
+            else if (!belongs) {
+                util.toast("请选择所属银行");
                 return false;
             }
-            // else if (!$("#address").html()) {
-            // 	util.toast("银行卡开户地没有选择");
-            // 	return false;
-            // } 
-            else if (self.isEmpty("#phone")) {
-                util.toast("请输入手机号码");
-                return false;
-            } else if (!util.checkPhone(phone)) {
-                util.toast("不是正确的手机号");
+            else if (!util.checkPhone(phone)) {
+                util.toast("请输入正确的手机号");
                 return false;
             } else if (!code) {
                 util.toast("请输入短信验证码");
                 return false;
+            } else if (!self.unique_code) {
+                util.toast("请先获取验证码");
+                return false;
+            } else {
+                var data = {
+                    identify: self.signinfo.identify,
+                    unique_code: self.unique_code,
+                    code: code
+                }
+                console.log(data)
+                var conFirm = {
+                    url: 'h5/bindConfirm',
+                    data: data,
+                    success: function (res) {
+                        console.log(res);
+                        if (res.code == 1) {
+                            // TODO 授权成功
+                            // window.history.go(-1);
+                            // window.history.back()
+                            window.location.href = localStorage.getItem("locationUrl")
+                        } else {
+                            util.toast(res.msg)
+                        }
+                    }
+                }
+                util.sendRequest(conFirm)
             }
 
         })

@@ -1,53 +1,32 @@
-//年收入select
-var timeData1 = [
-    { 'id': '10001', 'value': '2万以下' },
-    { 'id': '10002', 'value': '2-4万' },
-    { 'id': '10003', 'value': '4-6万' },
-    { 'id': '10004', 'value': '6-10万' },
-    { 'id': '10005', 'value': '8-10万' },
-    { 'id': '10006', 'value': '10-15万' },
-    { 'id': '10007', 'value': '15-30万' },
-    { 'id': '10008', 'value': '30万以上' }
-];
 
 //所属银行
 var bankData = [
-    { "id": 50, "value": "广发银行" },
-    { "id": 51, "value": "工商银行" },
-    { "id": 52, "value": "中国银行" },
-    { "id": 53, "value": "建设银行" },
-    { "id": 54, "value": "农业银行" },
-    { "id": 55, "value": "邮政储蓄" },
-    { "id": 56, "value": "平安银行" },
-    { "id": 57, "value": "中信银行" },
-    { "id": 58, "value": "浦发银行" },
-    { "id": 59, "value": "交通银行" },
-    { "id": 60, "value": "光大银行" },
-    { "id": 61, "value": "兴业银行" },
-    { "id": 62, "value": "民生银行" }
+    { "id": 'ICBC', "value": "工商银行" },//暂时屏蔽
+    // { "id": 'ABC', "value": "农业银行" },
+    { "id": 'BOC', "value": "中国银行" },
+    { "id": 'CCB', "value": "建设银行" },
+    // { "id": 'BCOM', "value": "交通银行" },
+    { "id": 'CMBC', "value": "民生银行" },
+    // { "id": 'CMB', "value": "招商银行" },
+    { "id": 'POST', "value": "邮储银行" },
+    { "id": 'PAB', "value": "平安银行" },
+    { "id": 'CITIC', "value": "中信银行" },
+    { "id": 'CEB', "value": "光大银行" },
+    { "id": 'CIB', "value": "兴业银行" },
+    { "id": 'GDB', "value": "广发银行" },
+    { "id": 'HXB', "value": "华夏银行" },//暂时屏蔽
+    // { "id": 'NJCB', "value": "南京银行" },
+    { "id": 'SPDB', "value": "浦发银行" },
+    { "id": 'SHB', "value": "上海银行" },
+    // { "id": 'BOB', "value": "北京银行" },
+    // { "id": 'HZB', "value": "杭州银行" },
+    // { "id": 'NBCB', "value": "宁波银行" },
+    // { "id": 'CZB', "value": "浙商银行" },
+    // { "id": 'HSB', "value": "徽商银行" },
+    // { "id": 'CBHB', "value": "渤海银行" },
+    // { "id": 'HKBANK', "value": "汉口银行" }
 ];
-//直系亲属关系
-var directedData = [
-    { 'id': '195', 'value': '配偶' },
-    { 'id': '124', 'value': '父母' },
-];
-//人际关系
-var interpersonalData = [
-    { 'id': '195', 'value': '配偶' },
-    { 'id': '124', 'value': '父母' },
-    { 'id': '125', 'value': '兄弟' },
-    { 'id': '138', 'value': '姐妹' },
-    { 'id': '158', 'value': '同事' },
-    { 'id': '127', 'value': '朋友' }
-];
-//居住时长
-var timeData = [
-    { 'id': '1', 'value': '0-1年' },
-    { 'id': '2', 'value': '1-2年' },
-    { 'id': '3', 'value': '3-5年' },
-    { 'id': '4', 'value': '5-10年' },
-    { 'id': '5', 'value': '10年以上' }
-];
+
 // 省份列表
 var iosProvinces = [
     /*******华北五省********/

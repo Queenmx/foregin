@@ -101,7 +101,7 @@ ul, li {
 .ios-select-widget-box.one-level-box .two-level-contain,
 .ios-select-widget-box.one-level-box .three-level-contain,
 .ios-select-widget-box.one-level-box .four-level-contain,
-.ios-select-widget-box.one-level-box .five-level-contain,
+.ios-select-widget-box.one-level-box .five-level-contain
 {
 	width: 0;
 }
@@ -111,7 +111,7 @@ ul, li {
 }
 .ios-select-widget-box.two-level-box .three-level-contain,
 .ios-select-widget-box.two-level-box .four-level-contain,
-.ios-select-widget-box.two-level-box .five-level-contain,
+.ios-select-widget-box.two-level-box .five-level-contain
 {
 	width: 0;
 }

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <title>待确认用款</title>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="keywords" content="待确认用款" />
+    <meta name="mobiletitle" content="待确认用款" />
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/libs/jquery.js"></script>
+    <script src="js/rem.js"></script>
+    <script src="js/aesmin.js" type="text/javascript" charset=" utf-8 "></script>
+    <script src="js/utils.js"></script>
+    <script src="js/LogRocket.min.js"></script>
+    <script>window.LogRocket && window.LogRocket.init('nionqn/xx');</script>
+    <link rel="stylesheet" href="css/m-base.css" />
+    <link rel="stylesheet" href="css/pensigner.css" />
+</head>
+
+<body style="background-color: #f8f8f8">
+    <div class="warpper">
+        <div class="container">
+            <div class="page-header clearfix">
+                <a href="javascript:history.go(-1);" class="page-back"></a>
+                <p class="page-title">待确认用款</p>
+            </div>
+            <div class="page-box">
+                <div class="main-tit">
+                    <p class="tit">审核后可借款金额（元）
+                        <i class="icon-detail"></i>
+                    </p>
+                    <p class="main-money">
+                        <b>20000.00</b>元</p>
+                </div>
+            </div>
+            <div class="main-li">
+                <p class="tit">借贷期限
+                    <span>12个月</span>
+                </p>
+            </div>
+        </div>
+        <!-- beingMask -->
+        <div class="mask" id="mask" style="display: none">
+            <div class="tips_contain">
+                <h3>利息和费用组成</h3>
+                <ul class="tips_msg">
+                    <li>借款金额
+                        <span>2025元</span>
+                    </li>
+                    <li>咨询服务费
+                        <span>2025元</span>
+                    </li>
+                    <li>到账金额
+                        <span>2025元</span>
+                    </li>
+                </ul>
+                <div class="controlbtn">
+                    <!-- <div class="btn cancel_btn">取消</div> -->
+                    <div class="btn confirm_btn">确定</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="page-button">去签约</div>
+    <script>
+        $(function () {
+            $(".icon-detail").on('click', function () {
+                $("#mask").css("display", "block");
+            })
+            $(".confirm_btn").on('click', function () {
+                $("#mask").css("display", "none")
+            })
+        })
+    </script>
+</body>
+
+</html>

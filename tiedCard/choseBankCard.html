@@ -16,6 +16,8 @@
     <meta name="mobiletitle" content="支付" />
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/rem.js"></script>
+    <script src="js/LogRocket.min.js"></script>
+    <script>window.LogRocket && window.LogRocket.init('nionqn/xx');</script>
     <link rel="stylesheet" type="text/css" href="css/m-base.css" />
     <link rel="stylesheet" type="text/css" href="css/pay.css" />
 </head>
@@ -23,19 +25,11 @@
 <body>
 
     <div class="warpper">
-        <!-- Header -->
-        <header>
-            <ul class="page-header">
-                <li class="page-back"></li>
-                <li class="page-title">title</li>
-                <li class="page-submit">submit</li>
-            </ul>
-        </header>
         <!-- way -->
         <div class="payway grid">
             <div class="col-12 clearfix">请选择已授权银行卡</div>
             <ul class="payBox clearfix">
-                <li>
+                <!-- <li>
                     <label for="bank0">
                         <img class="bankIcon" src="img/bankIcon.png" alt="" />
                         <span class="bankname">中国建设银行</span>（
@@ -52,7 +46,7 @@
                         <input type="radio" name="pay" id="bank1" value="1" />
                         <span class="checkIcon"></span>
                     </label>
-                </li>
+                </li> -->
             </ul>
         </div>
         <!-- addbankBtn -->
@@ -62,11 +56,26 @@
                 <p class="addMsg">添加银行卡</p>
             </div>
         </a>
+        <!-- beingMask -->
+        <!-- <div class="mask" id="mask" style="display: block">
+            <div class="tips_contain">
+                <h3>利息和费用组成</h3>
+                <p class="tips_msg">信用分不足，点击商城购买商品增加信用分 。享受极速放款特权。
+                </p>
+                <p class="tips_msg">系统升级中……
+                </p>
+                <div class="controlbtn">
+                <div class="btn cancel_btn">取消</div>
+                <div class="btn confirm_btn">确定</div>
+                </div>
+            </div>
+        </div> -->
         <!-- button -->
-        <button class="submit btn btn-primary">确认</button>
+        <button class="submit btn btn-primary" id="confirm">确认</button>
     </div>
+    <script src="js/aesmin.js" type="text/javascript" charset=" utf-8 "></script>
     <script src="js/utils.js"></script>
-    <script src="js/pay.js"></script>
+    <script src="js/chosebankcard.js"></script>
 </body>
 
 </html>

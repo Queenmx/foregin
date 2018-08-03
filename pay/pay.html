@@ -15,57 +15,101 @@
     <meta name="keywords" content="星融h5" />
     <meta name="mobiletitle" content="支付" />
     <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/rem.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/m-base.css" />
-    <link rel="stylesheet" type="text/css" href="css/pay.css" />
+    <!-- <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script> -->
+    <script src="js/aesmin.js" type="text/javascript" charset=" utf-8 "></script>
+    <script src="js/rem.js "></script>
+    <link rel="stylesheet " type="text/css " href="css/m-base.css " />
+    <link rel="stylesheet " type="text/css " href="css/pay.css " />
+    <script src="js/LogRocket.min.js"></script>
+    <script>window.LogRocket && window.LogRocket.init('nionqn/xx');</script>
 </head>
 
 <body>
 
-    <div class="warpper">
-        <!-- Header -->
-        <header>
-            <ul class="page-header">
-                <li class="page-back"></li>
-                <li class="page-title">title</li>
-                <li class="page-submit">submit</li>
-            </ul>
-        </header>
+    <div class="warpper ">
+        <!-- banner -->
+        <div class="memberfeeImg" style="display: none">
+            <img src="img/memberfee.png" />
+        </div>
         <!-- money -->
-        <div class="grid pay_con clearfix">
-            <span class="money_seris col-12">支付金额</span>
-            <div class="pay_money col-12">
+        <div class="grid pay_con clearfix ">
+            <span class="money_seris col-12 ">支付金额</span>
+            <div class="pay_money col-12 ">
                 <span>￥</span>
-                <span class="pay_num">8888888888.88</span>
+                <input class="pay_num" value="0.00" disabled />
             </div>
         </div>
         <!-- way -->
-        <div class="payway grid">
+        <div class="payway grid ">
             <div class="col-12 clearfix">请选择支付方式</div>
             <ul class="payBox clearfix">
-                <li>
+                <!-- <li>
                     <label for="alipay">
-                        <img class="recommend" src="img/alipay.png" alt="" />
-                        <span>支付宝支付</span>
+                        <img class="recommend" src="img/alipay.png" alt=" " />
+                        <span>支付宝
+                            <i class="alipayMsg charge">（手续费：0.6%/笔）</i>
+                        </span>
                         <input type="radio" name="pay" id="alipay" value="1" checked />
                         <span class="checkIcon"></span>
                     </label>
-                </li>
+                </li> -->
                 <li>
                     <label for="bankcard">
-                        <img class="recommend" src="img/unipay.png" alt="" />
-                        <span>银行卡支付</span>
-                        <input type="radio" name="pay" id="bankcard" value="2" />
+                        <img class="recommend" src="img/unipay.png" alt=" " />
+                        <span class="cardMsg">银行卡
+                            <i class="charge">（手续费：2元/笔）</i>
+                        </span>
+                        <input type="radio" name="pay" id="bankcard" value="2" checked />
+                        <span class="checkIcon"></span>
+                    </label>
+                </li>
+                <!-- <li style="display: none">
+                    <label for="wechat">
+                        <img class="recommend" src="img/wechat.png" alt=" " />
+                        <span class="cardMsg">微信
+                            <i class="charge">（手续费：2元/笔）</i>
+                        </span>
+                        <input type="radio" name="pay" id="wechat" value="3" />
+                        <span class="checkIcon"></span>
+                    </label>
+                </li> -->
+                <li>
+                    <label for="yeepay">
+                        <img class="recommend" src="img/yibao.png" alt=" " />
+                        <span class="cardMsg">易宝支付
+                            <i class="charge">（手续费：2元/笔）</i>
+                        </span>
+                        <input type="radio" name="pay" id="yeepay" value="4" />
                         <span class="checkIcon"></span>
                     </label>
                 </li>
             </ul>
         </div>
+        <!-- <p class="return_url"></p> -->
+        <!-- agree -->
+        <div class="page-agree" style="display: none;">
+            <input type="checkbox" id="checked" checked="chekcked" />
+            <label for="checked">我已详细阅读并同意</label>
+            <a id="member" data-href="0" href="javascript:void(0);">《会员服务协议》</a>
+        </div>
         <!-- button -->
-        <button class="submit btn btn-primary">确认</button>
+        <button class="submit btn btn-primary" id="confirm">确认</button>
+        <!-- 弹窗 -->
+        <div class="mask" style="display: none">
+            <div class="tips_contain">
+                <!-- <h3>提示</h3> -->
+                <p class="tips_msg">是否确认还款？</p>
+                <div class="controlbtn">
+                    <div class="btn cancel_btn">取消</div>
+                    <div class="btn confirm_btn">确定</div>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="js/des.js" type="text/javascript" charset=" utf-8 "></script>
     <script src="js/utils.js"></script>
-    <script src="js/pay.js"></script>
+    <script src="js/base64.js"></script>
+    <script src="js/pay.js "></script>
 </body>
 
 </html>

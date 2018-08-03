@@ -29,6 +29,17 @@
     margin-top:0.3rem;
     background: #fff;
 }
+.bankInfo{
+    background: #fff;
+    margin-top:0.2rem;
+    /* border-top: 1px solid #f0eff4;
+    border-bottom: 1px solid #f0eff4; */
+}
+.bankBox{
+    width: 6.42rem;
+    margin: 0 auto;
+    padding: .2rem 0;
+}
 .payBox {
     width: 6.42rem;
     margin: 0 auto;
@@ -79,10 +90,17 @@
     vertical-align: middle;
 }
 /* 提交按钮 */
-.submit{
+.submit,
+.turnback{
     width: 6.6rem;
-    margin: 1.2rem auto;
+    margin: 0 auto;
     display: block;
+}
+.submit{
+    margin-top: 1.2rem;
+}
+.turnback{
+    margin-top: .5rem;
 }
 /* 绑卡 */
 .bankadd {
@@ -166,7 +184,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    float: left;
+    float: right;
+    padding-right: .1rem;
     font-size: 0.3rem;
   }
   .page-form .form-group span {
@@ -228,4 +247,23 @@
     width: .5rem;
     height: .5rem;
     margin: 0 auto 0.1rem;
+}
+.tips_contain{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 80%;
+    background: #fff;
+    border-radius: .05rem;
+    text-align: center
+}
+.tips_contain h3{
+    font-size: .4rem;
+    line-height: 1rem;
+    border-bottom: 1px solid #f0eff4;
+}
+.tips_msg{
+    padding: 0.8rem .6rem;
+    line-height: .5rem;
+    color: #666;
 }

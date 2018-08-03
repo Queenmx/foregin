@@ -13,9 +13,13 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="keywords" content="星融h5" />
     <meta name="mobiletitle" content="签名板" />
-    <!-- <script src="js/jquery-1.11.1.min.js"></script> -->
+    <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/libs/jquery.js"></script>
     <script src="js/rem.js"></script>
+    <script src="js/aesmin.js" type="text/javascript" charset=" utf-8 "></script>
+    <script src="js/utils.js"></script>
+    <script src="js/LogRocket.min.js"></script>
+    <script>window.LogRocket && window.LogRocket.init('nionqn/xx');</script>
     <link rel="stylesheet" href="css/m-base.css" />
     <link rel="stylesheet" href="css/pensigner.css" />
     <!--[if lt IE 9]>
@@ -26,11 +30,11 @@
 <body>
     <div class="warpper">
         <div class="container">
-            <div class="page-header clearfix">
+            <!-- <div class="page-header clearfix">
                 <a href="javascript:history.go(-1);" class="page-back"></a>
                 <p class="page-title">签名确认</p>
                 <p class="page-submit" id="reset">重写</p>
-            </div>
+            </div> -->
             <div class="page-main">
                 <div class="page-banner">
                     <p>请在手绘板上使用正楷签名</p>
@@ -45,6 +49,7 @@
                 </div>
 
                 <button class="page-button" id="jSignatureSubmit">确认</button>
+                <button class="turnback btn btn-border-primary" id="reset">重签</button>
                 <div class="page-agree">
                     <input type="checkbox" id="checked" checked="chekcked" />
                     <label for="checked">我已详细阅读并同意以下合同条款</label>
@@ -56,8 +61,29 @@
                 </div>
             </div>
         </div>
+        <!-- beingMask -->
+        <div class="mask" id="mask" style="display:none">
+            <div class="loading">
+                <img class="loadingImg" src="img/loading.gif">
+                <p>处理中</p>
+            </div>
+        </div>
+        <!-- beingMask -->
+        <!-- <div class="mask" id="mask" style="display: block">
+            <div class="tips_contain">
+                <h3>利息和费用组成</h3>
+                <p class="tips_msg">信用分不足，点击商城购买商品增加信用分 。享受极速放款特权。
+                </p>
+                <p class="tips_msg">系统升级中……
+                </p>
+                <div class="controlbtn">
+                    <div class="btn cancel_btn">取消</div>
+                    <div class="btn confirm_btn">确定</div>
+                </div>
+            </div>
+        </div> -->
     </div>
-    <script src="js/utils.js"></script>
+
     <script src="js/libs/modernizr.js"></script>
     <script src="js/libs/jSignature.min.noconflict.js"></script>
     <script src="js/pensigner.js"></script>

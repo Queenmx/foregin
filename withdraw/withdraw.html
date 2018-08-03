@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>星融-支付</title>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="keywords" content="星融h5" />
+    <meta name="mobiletitle" content="支付" />
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/m-base.css" />
+    <link rel="stylesheet" type="text/css" href="css/withdraw.css" />
+</head>
+
+<body>
+
+    <div class="warpper">
+        <!-- Header -->
+        <!-- <header>
+            <ul class="page-header">
+                <li class="page-back"></li>
+                <li class="page-title">title</li>
+                <li class="page-submit">submit</li>
+            </ul>
+        </header> -->
+        <!-- tips -->
+        <p class="tips">当前可提现金额：1,000</p>
+        <!-- way -->
+        <div class="payway grid">
+            <ul class="payBox clearfix">
+                <!-- 银行卡列表 -->
+                <li>
+                    <label for="bank0">
+                        <img class="bankIcon" src="img/bankicos/CCB.png" alt="" />
+                        <span class="bankname">中国建设银行</span>（
+                        <span class="cardNum">1234567856104</span>）
+                    </label>
+                </li>
+            </ul>
+            <!-- money -->
+            <div class="grid pay_con clearfix">
+                <span class="money_seris col-12">提现金额</span>
+                <div class="pay_money">
+                    <div class="moneyNum">
+                        <span>￥</span>
+                        <input class="pay_num" value="--.--" disabled />
+                    </div>
+                    <div class="resetPsd">重置密码</div>
+                </div>
+            </div>
+        </div>
+        <!-- button -->
+        <button class="submit btn btn-primary" id="confirm">确认</button>
+        <!-- 弹窗 -->
+        <div class="mask">
+            <div class="tips_contain">
+                <h3>提示</h3>
+                <p class="tips_msg">重置密码需要提供已绑银行卡（6104）的户名、身份证号、银行卡号、绑定手机号</p>
+                <div class="controlbtn">
+                    <div class="btn cancel_btn">取消</div>
+                    <div class="btn confirm_btn">确定</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/aesmin.js" type="text/javascript" charset=" utf-8 "></script>
+    <script src="js/utils.js"></script>
+    <script src="js/withdraw.js"></script>
+    <script>
+        if (util.getUrlparam('reload') == 1) {
+            window.location.reload()
+        }
+
+    </script>
+</body>
+
+</html>

@@ -105,33 +105,143 @@
   border-radius: 0.1rem;
   font-size: 0.3rem;
   display: block;
-  margin: 2.8rem auto 1rem;
+  margin: 2.2rem auto .5rem;
   cursor: pointer;
   border: none;
 }
 
 
-	#signatureparent {
-		color:#000;
-		/*max-width:600px;*/
-	}
-	
-	/*This is the div within which the signature canvas is fitted*/
+#signatureparent {
+    color:#000;
+    /*max-width:600px;*/
+}
 
-	/* Drawing the 'gripper' for touch-enabled devices */ 
-	html.touch #content {
-		float:left;
-		width:100%;
-	}
-	html.touch #scrollgrabber {
-		float:right;
-		width:4%;
-		margin-right:2%;
-	}
-	html.borderradius #scrollgrabber {
-		border-radius: 1em;
-  }
+/*This is the div within which the signature canvas is fitted*/
 
+/* Drawing the 'gripper' for touch-enabled devices */ 
+html.touch #content {
+    float:left;
+    width:100%;
+}
+html.touch #scrollgrabber {
+    float:right;
+    width:4%;
+    margin-right:2%;
+}
+html.borderradius #scrollgrabber {
+    border-radius: 1em;
+}
+.turnback{
+    width: 6.44rem;
+    height: 0.78rem;
+    margin: 0 auto .3rem;
+    display: block;
+}
 
+ /* mask */
+ .mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+}
+
+.loading {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    margin-left: -.75rem;
+    margin-top: -.16rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    font-size: .3rem;
+    color: #fff;
+}
+
+.loadingImg {
+    width: .5rem;
+    height: .5rem;
+    margin: 0 auto 0.1rem;
+}
+
+.tips_contain{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 80%;
+    background: #fff;
+    border-radius: .05rem;
+    z-index: 99;
+    /* text-align: center */
+}
+.tips_contain h3{
+    font-size: .4rem;
+    line-height: 1rem;
+    border-bottom: 1px solid #f0eff4;
+    text-align: center
+}
+.tips_msg{
+    padding: .3rem .6rem;
+    line-height: .5rem;
+    /* line-height: 2rem; */
+    color: #999;
+}
+.tips_msg span{
+    float: right;
+}
+.main-tit span{float: right;}
+.controlbtn{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #f0eff4;
+}
+.controlbtn .btn{
+    flex: 1;
+    border:none;
+}
+.cancel_btn{
+    border-right: 1px solid #f0eff4!important;
+}
+.confirm_btn{
+    color: #568ff6
+}
+.page-box{
+    width: 100%;
+    padding: 0 0.55rem;
+    background: #568ff6;
+    color: #fff;
+    box-sizing: border-box;
+}
+.icon-detail{
+    width: .5rem;
+    height: .5rem;
+    background-image: url(../img/detail.png);
+    background-size: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+}
+.main-tit .tit{
+    padding: .6rem 0
+}
+.main-money{
+    padding-bottom: .5rem;
+}
+.main-money b{
+    font-size: 1rem;
+    font-weight: 400;
+}
+.main-li{
+    padding: .4rem 0.55rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ececec
+}
+.main-li span{
+    float: right;
+}
 	 
 

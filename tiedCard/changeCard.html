@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>星融-支付</title>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="keywords" content="星融h5" />
+    <meta name="mobiletitle" content="支付" />
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/m-base.css" />
+    <link rel="stylesheet" href="css/iosSelect.css" />
+    <link rel="stylesheet" type="text/css" href="css/pay.css" />
+</head>
+
+<body>
+
+    <div class="warpper">
+        <!-- Header -->
+        <!-- <header>
+            <ul class="page-header">
+                <li class="page-back"></li>
+                <li class="page-title">title</li>
+                <li class="page-submit">submit</li>
+            </ul>
+        </header> -->
+        <div class="bankInfo">
+            <ul class="bankBox clearfix">
+                <li>
+                    <label for="bank0">
+                        <img class="bankIcon" src="img/bankIcon.png" alt="" />
+                        <span class="bankname">中国建设银行</span>（
+                        <span class="cardNum">1234567851151</span>）
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <!-- tips -->
+        <p class="tips">请填写银行卡开户信息</p>
+        <div class="page-form">
+            <div class="form-group clearfix select" id="addressSelect">
+                <p class="form-laber">开户地址</p>
+                <span class="form-icon"></span>
+                <span class="form-show" data-city-code="510100" data-province-code="510000" data-district-code="510105" id="address">请选择银行卡开户地</span>
+            </div>
+            <div class="form-group clearfix select" id="branchName">
+                <p class="form-laber">支行名称</p>
+                <span class="form-icon"></span>
+                <span class="form-show" id="bankBranch">请选择开户支行</span>
+            </div>
+            <div class="form-group bankcode clearfix">
+                <p class='form-laber'>短信验证码</p>
+                <input type="text" maxlength="10" placeholder='请输入验证码' class="code-input" id="code" />
+                <div class="form-code getcode">获取验证码</div>
+            </div>
+        </div>
+        <!-- button -->
+        <button class="submit btn btn-primary" id="changeCard">确认</button>
+        <button class="turnback btn btn-border-primary" onclick="javascript:history.go(-1);">返回</button>
+    </div>
+    <!-- beingMask -->
+    <div class="mask" id="mask" style="display:none">
+        <div class="loading">
+            <img class="loadingImg" src="img/loading.gif">
+            <p>处理中</p>
+        </div>
+    </div>
+
+    </div>
+    <script src="js/aesmin.js" type="text/javascript" charset=" utf-8 "></script>
+    <script src="js/utils.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/jsonData.js"></script>
+    <script src="js/iosSelect.js"></script>
+    <script src="js/changeCard.js"></script>
+</body>
+
+</html>

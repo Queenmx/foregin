@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <title>待确认用款</title>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="keywords" content="待确认用款" />
+    <meta name="mobiletitle" content="待确认用款" />
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/rem.js"></script>
+    <script src="js/aesmin.js" type="text/javascript" charset=" utf-8 "></script>
+    <script src="js/utils.js"></script>
+    <link rel="stylesheet" href="css/m-base.css" />
+    <link rel="stylesheet " type="text/css " href="css/pay.css " />
+    <script src="js/LogRocket.min.js"></script>
+    <script>window.LogRocket && window.LogRocket.init('nionqn/xx');</script>
+</head>
+
+<body>
+    <div class="warpper">
+        <div class="container">
+            <div class="page-box">
+                <div class="main-tit">
+                    <p class="tit">借款金额（元）
+                        <!-- <i class="icon-detail"></i> -->
+                    </p>
+                    <p class="main-money">
+                        <b>0.00</b>
+                    </p>
+                </div>
+            </div>
+            <div class="main-ul">
+                <div class="pro-event">
+                    <div class="main-li no-pro">
+                        <p class="tit">请选择商品
+                            <span class="arrow-icon"></span>
+                        </p>
+                    </div>
+                    <div class="have-pro">
+                        <div class="main-li">
+                            <p class="tit">自选商品</p>
+                        </div>
+                        <div class="pro-card clearfix">
+                            <img class="commodityImg" src="img/bankIcon.png" />
+                            <div class="pro-detail">
+                                <h5 class="commodityName">iPhone X手机壳苹果X新款钢化膜超薄</h5>
+                                <p>规格：
+                                    <i class="pro-size">iPhoneX</i>
+                                </p>
+                                <p>
+                                    <span class="price">￥0.00</span>
+                                    <span>运费:
+                                        <i class="postage">￥0.00</i>
+                                    </span>
+                                </p>
+                            </div>
+                            <i class="arrow-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="address-event">
+                    <div class="main-li no-address">
+                        <p class="tit">请选择收货地址
+                            <span class="arrow-icon"></span>
+                        </p>
+                    </div>
+                    <div class="have-ads clearfix">
+                        <div class="ads-card">
+                            <p class="user">
+                                <span class="username">张先生</span>
+                                <span>
+                                    <i class="phone">13838380438</i>
+                                </span>
+                            </p>
+                            <p class="address">深圳市罗湖区地王大厦</p>
+                        </div>
+                        <span class="arrow-icon"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mask" id="loading" style="display:block">
+                <div class="loading">
+                    <img class="loadingImg" src="img/loading51.gif">
+                    <p>加载中……</p>
+                </div>
+            </div>
+
+            <!-- beingMask -->
+            <div class="mask" id="mask" style="display: none">
+                <div class="tips_contain">
+                    <!-- <h3>利息和费用组成</h3> -->
+                    <p class="tips_msg">信用分不足，点击商城购买商品增加信用分 。享受极速放款特权。
+                    </p>
+                    <!-- <p class="tips_msg">系统升级中……
+                    </p> -->
+                    <div class="controlbtn">
+                        <!-- <div class="btn cancel_btn">取消</div> -->
+                        <div class="btn confirm_btn">确定</div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-button confirmdisable" id="confirm">确认借款</div>
+
+        </div>
+        <script src="js/base64.js"></script>
+        <script src="js/purchased.js"></script>
+</body>
+
+</html>

@@ -1,11 +1,11 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>星融-支付</title>
+    <title>星融-绑卡</title>
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
@@ -13,9 +13,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="keywords" content="星融h5" />
-    <meta name="mobiletitle" content="支付" />
+    <meta name="mobiletitle" content="绑卡" />
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/rem.js"></script>
+    <script src="js/LogRocket.min.js"></script>
+    <script>window.LogRocket && window.LogRocket.init('nionqn/xx');</script>
     <link rel="stylesheet" type="text/css" href="css/m-base.css" />
     <link rel="stylesheet" href="css/iosSelect.css" />
     <link rel="stylesheet" type="text/css" href="css/pay.css" />
@@ -24,34 +26,26 @@
 <body>
 
     <div class="warpper">
-        <!-- Header -->
-        <header>
-            <ul class="page-header">
-                <li class="page-back"></li>
-                <li class="page-title">title</li>
-                <li class="page-submit">submit</li>
-            </ul>
-        </header>
         <!-- tips -->
         <p class="tips">请输入银行卡信息</p>
         <div class="page-form">
             <div class="form-group clearfix">
                 <p class="form-laber">姓名</p>
-                <input type="text" maxlength="10" placeholder='请输入姓名' class="form-input" id="name" />
+                <input type="text" maxlength="20" placeholder='请输入姓名' class="form-input" id="name" disabled />
             </div>
             <div class="form-group clearfix">
                 <p class="form-laber">身份证号</p>
-                <input type="text" maxlength="22" placeholder='请输入身份证号' class="form-input" id="card" />
+                <input type="text" maxlength="22" placeholder='请输入身份证号' class="form-input" id="card" disabled />
             </div>
             <div class="form-group clearfix">
                 <p class="form-laber">银行卡号</p>
                 <input type="tel" maxlength="22" placeholder='请输入银行卡号' class="form-input" id="bankno" />
             </div>
-            <!-- <div class="form-group clearfix select">
+            <div class="form-group clearfix select">
                 <p class="form-laber">所属银行</p>
-                <span class="form-show" id="belongs"></span>
                 <span class="form-icon"></span>
-            </div> -->
+                <span class="form-show" id="belongs"></span>
+            </div>
             <div class="form-group clearfix">
                 <p class="form-laber">银行预留手机号</p>
                 <input type="tel" maxlength="15" placeholder='请输入银行卡预留手机号' class="form-input" id="phone" />
@@ -74,11 +68,22 @@
     </div>
 
     </div>
+    <script src="js/aesmin.js" type="text/javascript" charset=" utf-8 "></script>
     <script src="js/utils.js"></script>
     <script src="js/iscroll.js"></script>
     <script src="js/jsonData.js"></script>
     <script src="js/iosSelect.js"></script>
     <script src="js/addbank.js"></script>
+    <!-- <script>
+        var newBankData = bankData.filter(function (item) {
+            var query = util.getUrlparam('suorce'), data;
+            if (query == 1) {
+                data = item.id != 'ICBC' && item.id != 'BOC'
+            }
+            return data;
+        })
+        console.log(newBankData);
+    </script> -->
 </body>
 
 </html>

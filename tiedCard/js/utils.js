@@ -3,6 +3,30 @@
  */
 ;
 (function (win, doc, util) {
+    /**
+     * 加密
+     * @param word
+     * @returns {*}
+     */
+    util.strEnc = function (word, key) {
+        key = CryptoJS.enc.Utf8.parse(key);
+        var srcs = CryptoJS.enc.Utf8.parse(word);
+        var encrypted = CryptoJS.AES.encrypt(srcs, key, { mode: CryptoJS.mode.ECB, padding: CryptoJS.pad.Pkcs7 });
+        return encrypted.toString();
+    }
+
+    /**
+     * 解密
+     * @param word
+     * @returns {*}
+     */
+    util.strDec = function (word, key) {
+        key = CryptoJS.enc.Utf8.parse(key);
+        var decrypt = CryptoJS.AES.decrypt(word, key, { mode: CryptoJS.mode.ECB, padding: CryptoJS.pad.Pkcs7 });
+        // console.log("hhhh", decrypt)
+        // console.log(CryptoJS.enc.Utf8.stringify(decrypt))
+        return CryptoJS.enc.Utf8.stringify(decrypt).toString();
+    }
 	/**
 	 * 手机号码验证
 	 * @param {String} phone
@@ -130,15 +154,18 @@
     /**
  * 获取url参数
  * @param  {String} name 参数值
+ * 支持中文和英文
  * @return {Boolean}      [description]
  */
     util.getUrlparam = function (name) {
-        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
-        var r = window.location.search.substr(1).match(reg);
-        if (r != null) {
-            return unescape(r[2]);
-        }
-        return null;
+        // 获取参数
+        var url = window.location.search;
+        // 正则筛选地址栏
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        // 匹配目标参数
+        var result = url.substr(1).match(reg);
+        //返回参数值
+        return result ? decodeURIComponent(result[2]) : null;
     };
     /**
  * ajax封装
@@ -148,19 +175,34 @@
     util.sendRequest = function (opts) {
         $.ajax({
             type: 'POST',
-            url: 'http://apih5.xinyzx.com:81/h5' + opts.url,
+            // url: 'http://wuhanxingrong.vicp.io:28892/' + opts.url,
+            // url: 'http://wuhanxingrong.vicp.io:8762/xr/cash/' + opts.url,
+            // url: 'http://wuhanxingrong.vicp.io:28893/' + opts.url,
+            // url: 'https://gateway-test.istarcredit.com/xr/cash/' + opts.url,//测试地址https
+            //url: 'http://wuhanxingrong.vicp.io:8762/xr/cash/' + opts.url,//测试地址
+            //url: 'http://wuhanxingrong.vicp.io:8762/xr/cash/' + opts.url,
+            // url: 'http://xiaodai.istarcredit.com:8762/xr/cash/' + opts.url,生产地址
+            url: 'https://xiaodai.istarcredit.com:8752/xr/cash/' + opts.url,//生产地址https
             timeout: 20000,
             // dataType: "jsonp",
             // callback: 'callback',
-            data: opts.data || {},
+            data: { params: util.strEnc(JSON.stringify(opts.data), 'XRD20171030APIMM') } || {},
             beforeSend: opts.beforeSend || function () {
                 //opts.beforeSend===undefined 默认操作
             },
             complete: opts.complete || function () {
                 //opts.complete===undefined 默认操作
             },
-            success: opts.success || function () {
-                //opts.success===undefined 默认操作
+            // success: opts.success || function () {
+            //     //opts.success===undefined 默认操作
+
+            // },
+            success: function (res) {
+                //console.log("success:" + util.strDec(res, 'XRD20171030APIMM'))
+                res = JSON.parse(util.strDec(res, 'XRD20171030APIMM'))
+                if (opts.success) {
+                    opts.success(res)
+                }
 
             },
             error: opts.error || function (error) {
@@ -176,6 +218,7 @@
     }
 	/**
      * 获取地址栏参数
+     * 只支持中文
      * @param {Object} name
      */
     util.getQueryString = function (name) {
@@ -220,4 +263,14 @@
         str += this.random(length - str.length);
         return str;
     }
+    $(".page-back").on('click', function () {
+        window.history.back();
+    })
+    window.addEventListener("offline", function (e) {
+        util.toast("网络连接异常")
+    })
+
+    window.addEventListener("online", function (e) {
+        window.location.reload()
+    })
 })(window, window.document, window.util || (window.util = {}));

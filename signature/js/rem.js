@@ -4,6 +4,7 @@
  * @param {Object} _D
  */
 (function (win) {
+    console.log("rem.js")
     var doc = win.document;
     var docEl = doc.documentElement;
     var tid;
